@@ -1,0 +1,20 @@
+S -> """{nome}
+Rua: {rua} {numero}
+{codigo} {localidade}""" ;
+
+# S -> nome "Rua" rua numero codigo localidade ;
+
+nome -> __nomes __apelidos ;
+
+rua -> "Pinheiro Velho" | "de Nossa Senhora" ;
+
+codigo -> {my_random(1000,9999)} "-" {my_random(100,999)} ;
+
+localidade -> __cidades  ;
+
+numero -> "n." _N ;
+
+%% 
+
+def my_random(a,b):
+	return random.randint(a,b)
